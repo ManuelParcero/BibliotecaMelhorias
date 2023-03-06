@@ -22,7 +22,12 @@ namespace Biblioteca.Controllers
         public IActionResult Index()
         {
             Autenticacao.CheckLogin(this);
+            Console.WriteLine(Criptografia.GerarMD5("1010202030304040"));
+            
             return View();
+
+
+                       
         }
 
         public IActionResult Login()
@@ -31,9 +36,9 @@ namespace Biblioteca.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(string login, string senha)
-        {
-            if(login != "admin" || senha != "123")
+        public IActionResult Login(string login, string senha){
+
+            if(login != "admin" || senha != "123") 
             {
                 ViewData["Erro"] = "Senha inválida";
                 return View();
@@ -41,13 +46,19 @@ namespace Biblioteca.Controllers
             else
             {
                 HttpContext.Session.SetString("user", "admin");
+                HttpContext.Session.SetString("senha", Criptografia.GerarMD5("123"));
                 return RedirectToAction("Index");
             }
         }
 
-        public IActionResult Privacy()
+     // tenho que ver no exemplo do crud como é melhor a forma de login e senha.
+
+        public IActionResult logout()
         {
-            return View();
+            HttpContext.Session.Clear(); 
+            return View ("Login");
         }
+
+     
     }
 }

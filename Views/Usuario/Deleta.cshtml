@@ -1,0 +1,14 @@
+@model Usuario
+  @{
+      ViewData["Title"] = "Editar";
+  }
+
+  <h2>Exclusão de registro</h2>
+  <p>Esta ação excluirá o post <strong>@Model.Nome</strong> e a operação não poderá ser desfeita</p>
+  <p>Deseja mesmo excluir?</p>
+
+  <form asp-action="Deleta" method="POST">
+      <input type="hidden" asp-for="Id" />
+      <button type="submit" name="decisao" value="n">Não</button>
+      <button type="submit" name="decisao" value="s">Sim</button>
+  </form>

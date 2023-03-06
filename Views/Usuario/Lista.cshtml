@@ -1,0 +1,73 @@
+@model ICollection<Usuario>
+@{
+    ViewData["Title"] = "Usuários";
+}
+
+<h2>Lista de Usuários</h2>
+
+<form asp-controller="Post" asp-action="Lista" method="GET">
+      <fieldset>
+          <legend>Filtros</legend>
+          <p style="float:left; margin-right:10px;">Termo: <input type="text" name="q" /></p>
+          <p>Ordenação: 
+              <select name="ordem">
+                  <option value="t">Título</option>
+                  <option value="d">Data</option>
+              </select> 
+          </p>
+          <input type="submit" value="buscar" />
+      </fieldset>
+  </form>
+
+  <br/>
+@if(Model != null)
+
+{    
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Login</th>
+            <th>Senha</th>
+             <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Usuario u in Model)
+        {
+            <tr>
+                <td>@u.Id</td>
+                <td>@u.Nome</td>
+                <td>@u.Login</td>
+                <td>@u.Senha</td>
+                <td><a href="/Atualiza?id=@u.Id">Editar</a> | <a href="/Deleta?id=@u.Id">Excluir</a></td>     
+            </tr>
+        }
+ 
+
+    </tbody>
+</table>
+}
+
+<div>
+      @foreach (Usuario usuario in Model)
+      {
+          <article id="post-@usuario.Id" class="post">
+              <h2 class="post-Nome">@usuario.Nome</h2>
+              <span class="post-Login">@usuario.Login</span>
+             
+              <section id="usuario-@usuario.Id" class="Usuario">
+                  <h4>Comentários</h4>
+                  <partial name="_ListaUsuarios" model="@usuario.Nome"/>
+                  <partial name="_FormCadastro" model="@usuario.Id"/>
+              </section>
+          </article>
+      }
+
+      @for(int i = 1; i<= (int)ViewData["Paginas"]; i++)
+        { 
+            <a href="/?p=@i">@i</a>
+        }
+      
+  </div>

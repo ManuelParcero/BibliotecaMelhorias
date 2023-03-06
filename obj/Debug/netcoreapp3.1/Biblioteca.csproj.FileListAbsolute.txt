@@ -102,3 +102,8 @@
 /home/manuel/Área de Trabalho/Temporario/1. Tecnico em informatica para a internet/2. Modulo 2/2. Documentar e realizar manutenção de aplicações Web/Biblioteca/obj/Debug/netcoreapp3.1/Biblioteca.dll
 /home/manuel/Área de Trabalho/Temporario/1. Tecnico em informatica para a internet/2. Modulo 2/2. Documentar e realizar manutenção de aplicações Web/Biblioteca/obj/Debug/netcoreapp3.1/Biblioteca.pdb
 /home/manuel/Área de Trabalho/Temporario/1. Tecnico em informatica para a internet/2. Modulo 2/2. Documentar e realizar manutenção de aplicações Web/Biblioteca/obj/Debug/netcoreapp3.1/Biblioteca.genruntimeconfig.cache
+/home/manuel/Área de Trabalho/Temporario/1. Tecnico em informatica para a internet/2. Modulo 2/2. Documentar e realizar manutenção de aplicações Web/Biblioteca/bin/Debug/netcoreapp3.1/System.Formats.Asn1.dll
+/home/manuel/Área de Trabalho/Temporario/1. Tecnico em informatica para a internet/2. Modulo 2/2. Documentar e realizar manutenção de aplicações Web/Biblioteca/bin/Debug/netcoreapp3.1/System.Security.Cryptography.Cng.dll
+/home/manuel/Área de Trabalho/Temporario/1. Tecnico em informatica para a internet/2. Modulo 2/2. Documentar e realizar manutenção de aplicações Web/Biblioteca/bin/Debug/netcoreapp3.1/System.Security.Cryptography.Pkcs.dll
+/home/manuel/Área de Trabalho/Temporario/1. Tecnico em informatica para a internet/2. Modulo 2/2. Documentar e realizar manutenção de aplicações Web/Biblioteca/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp3.0/System.Security.Cryptography.Cng.dll
+/home/manuel/Área de Trabalho/Temporario/1. Tecnico em informatica para a internet/2. Modulo 2/2. Documentar e realizar manutenção de aplicações Web/Biblioteca/obj/Debug/netcoreapp3.1/Razor/Views/Usuario/cadastro.cshtml.g.cs

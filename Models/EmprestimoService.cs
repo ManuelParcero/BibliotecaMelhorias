@@ -26,21 +26,15 @@ namespace Biblioteca.Models
                 emprestimo.DataEmprestimo = e.DataEmprestimo;
                 emprestimo.DataDevolucao = e.DataDevolucao;
                 emprestimo.Livro = e.Livro;
+                emprestimo.Devolvido = e.Devolvido;
 
                 bc.SaveChanges();
             }
         }
 
-        public ICollection<Emprestimo> ListarTodos(FiltrosEmprestimos filtro)
+        public ICollection<Emprestimo> ListarTodos(FiltrosLivros filtro = null)
         {
-            using(BibliotecaContext bc = new BibliotecaContext())
-            {
-                return bc.Emprestimos.Include(e => e.Livro).ToList();
-                
-            }
-        }
-         /*{
-            using(BibliotecaContext bc = new BibliotecaContext())
+         using(BibliotecaContext bc = new BibliotecaContext())
             {
                 IQueryable<Emprestimo> query;
                 
@@ -53,8 +47,8 @@ namespace Biblioteca.Models
                             query = bc.Emprestimos.Where(l => l.NomeUsuario.Contains(filtro.Filtro));
                         break;
 
-                        case "Titulo":
-                            query = bc.Emprestimos.Where(l => l.Livro Livro.Contains(filtro.Filtro));
+                        case "Livro":
+                            query = bc.Emprestimos.Where(l => l.Livro.Contains(filtro.Filtro));
                         break;
 
                         default:
@@ -71,7 +65,8 @@ namespace Biblioteca.Models
                 //ordenação padrão
                 return query.OrderBy(l => l.DataDevolucao).ToList();
             }
-        }*/
+        }
+
 
         public Emprestimo ObterPorId(int id)
         {

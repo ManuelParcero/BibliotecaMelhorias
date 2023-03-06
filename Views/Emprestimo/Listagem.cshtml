@@ -37,15 +37,28 @@
             <tbody>
                 @foreach(Emprestimo e in Model)
                 {
-                <tr>
-                    <td>@e.Id</td>
-                    <td>@e.NomeUsuario</td>
-                    <td>@e.DataEmprestimo.ToString("dd/MM/yyyy")</td>
-                    <td>@e.DataDevolucao.ToString("dd/MM/yyyy")</td>
-                    <td>@e.Livro.Titulo</td>
-                    <td>@e.Livro.Autor</td>
-                    <td><a href="/Emprestimo/Edicao/@e.Id">Editar</a></td>                 
-                </tr>
+                    <tr>
+                        <td>@e.Id</td>
+                        <td>@e.NomeUsuario</td>
+                        <td>@e.DataEmprestimo.ToString("dd/MM/yyyy")</td>
+
+                        if((DataDevolução - DataEmpretimo) > 30)
+                        {
+                        <td><strong>@e.DataDevolucao.ToString("dd/MM/yyyy")</strong></td>
+                        
+                        } 
+                        
+                        else 
+                        
+                        {
+                            <td>@e.DataDevolucao.ToString("dd/MM/yyyy")</td>
+                        }
+
+
+                        <td>@e.Livro.Titulo</td>
+                        <td>@e.Livro.Autor</td>
+                        <td><a href="/Emprestimo/Edicao/@e.Id">Editar</a></td>                 
+                    </tr>
                 }
             </tbody>
         </table>
@@ -54,4 +67,6 @@
                 }
     </div>
 </div>
+
+
 

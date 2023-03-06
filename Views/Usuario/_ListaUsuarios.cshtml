@@ -1,0 +1,7 @@
+ @model ICollection<Usuario>
+
+  @foreach (Usuario usuario in Model)
+  {
+      <h5>@usuario.Nome - @usuario.Login.ToString()</h5>
+      <p></p>
+  }
